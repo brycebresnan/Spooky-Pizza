@@ -1,22 +1,22 @@
-//Business Logic for Order
+//Business Logic for Order Object
 function Order(){
-this.pizzas = {};
+this.pizzas = [];
 this.total = 0;
 }
 
 Order.prototype.addToOrder = function(pizza) {
-  //adds pizza object order to pizza property
-  //adds cost to total
+  this.pizzas.push(pizza);
+  pizza.findCost(pizza);
+  this.total += pizza.cost;
 }
 
-//Business Logic for Pizza
+//Business Logic for Pizza Object
 function Pizza(toppings, size){
   this.toppings = toppings;
   this.size = size;
   this.cost = 0;
 }
 
-//loops over toppings
 Pizza.prototype.findCost = function() {
   this.cost = 0;
   switch (this.size) {
@@ -31,8 +31,6 @@ Pizza.prototype.findCost = function() {
       break;
   }
 
-  // this.cost += (this.toppings.length * 5)
-
   this.toppings.forEach(topping => {
     if (topping !== "Beyond Blood (vegan)"){
       this.cost += 5;
@@ -44,12 +42,6 @@ Pizza.prototype.findCost = function() {
 
   return this.cost;
 }
-
-
-
-
-
-
 
 //UI Logic:
 
