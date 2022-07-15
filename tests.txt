@@ -11,11 +11,13 @@ const pizza1 = new Pizza(["onions", "cheese"], "small");
 Expected Output: Pizza {cost: 0, toppings: ["onions", "cheese"], size: "small"}
 
 
-Describe: findCost()
+Describe: Pizza.prototype.findCost()
 
-Test:
-Code:
-Expected Output:
+Test: "If there are no toppings in the toppings object property, it should return just the cost of the pizza based on its size."
+Code: 
+const pizza1 = new Pizza([], "small");
+pizza1.findCost()
+Expected Output: 100
 
 Test:
 Code:
