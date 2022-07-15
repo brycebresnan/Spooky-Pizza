@@ -7,7 +7,7 @@ body {
   color: rgb(209, 205, 199);
   font-weight: 300;
   background-image: url(../img/dungeon.gif);
-  
+  padding-left:30px;
 }
 
 h1 {
