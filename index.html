@@ -5,6 +5,7 @@
     <link href="css/styles.css" rel="stylesheet" type="text/css">
     <script src="js/scripts.js"></script>
     <script src='http://use.edgefonts.net/creepster.js'></script>
+    <script src="https://cdn.jsdelivr.net/combine/npm/tone@14.7.58,npm/@magenta/music@1.23.1/es6/core.js,npm/focus-visible@5,npm/html-midi-player@1.5.0"></script>
     <title>Spooky's Pizza</title>
   </head>
 
@@ -14,13 +15,13 @@
       <p>All our pizzas are made from the least fresh ingredients possible and burned alive to imperfection in our wood fired crematorium. Please use the order form below to create your most decrepit Frankensteinian pizza!</p>
       <form id="orderForm">
         <h4>Size:</h4>
-        <input type="radio" id="small" name="size" value="Small" checked>
+        <input type="radio" id="small" name="size" value="small" checked>
         <label for="small">Small (100 Gold)</label>
         <br>
-        <input type="radio" id="med" name="size" value="Medium">
+        <input type="radio" id="med" name="size" value="med">
         <label for="med">Medium (200 Gold)</label>
         <br>
-        <input type="radio" id="large" name="size" value="Large">
+        <input type="radio" id="large" name="size" value="large">
         <label for="large">Large (300 Gold)</label>
         <br><br>
         <h4>Toppings:</h4>
@@ -41,7 +42,7 @@
         <label for="top1">Bat Wings</label>
         <br>
         <input type="checkbox" id="top6" name="toppings" value="Beyond Blood (vegan)">
-        <label for="top1">Beyond Blood (vegan)</label>
+        <label for="top1">Beyond Blood (vegan) +10 Gold</label>
         <br><br>
         <button type="submit">Send to the Crypt!</button>
       </form>
@@ -49,6 +50,8 @@
         <h4>Your Order:</h4>
         <div id="results"></div>
       </div>
+      <midi-player id="midiPlayer" src="midi/funeral.mid"></midi-player>
+      <button id="stopButton">Stop The Music</button>
     </div>
   </body>
 
