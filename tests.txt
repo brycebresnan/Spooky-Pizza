@@ -3,7 +3,8 @@ Describe: Pizza()
 Test: "The function should create a new Pizza type object."
 Code: 
 const pizza1 = new Pizza();
-Expected Output:Pizza {}
+typeof(pizz1);
+Expected Output: 'object'
 
 Test: "The function should take in an array of toppings, and a size varriable to set as two respective properties in the object, as well as initialize a third property, cost, and set it to 0."
 Code:
@@ -16,20 +17,36 @@ Describe: Pizza.prototype.findCost()
 Test: "If there are no toppings in the toppings object property, it should return just the cost of the pizza based on its size."
 Code: 
 const pizza1 = new Pizza([], "small");
-pizza1.findCost()
+pizza1.findCost();
 Expected Output: 100
 
-Test:
+Test: "If there are toppings, their cost will be added to the cost of the size of the pizza and return the total cost."
 Code:
-Expected Output:
+const pizza1 = new Pizza(["onions", "cheese", "Beyond Blood (vegan)"], "small");
+pizza1.findCost();
+Expected Output:120
 
-Test:
-Code:
-Expected Output:
 
-Test:
+Describe: Order()
+
+Test: "The function should create a new Order type object."
 Code:
+const order1 = new Order();
+typeof(order1);
+Expected Output: 'object'
+
+Test: "The object should have properties for pizzas (an array of objects), and total (default set to 0)"
+Code:
+const order1 = new Order();
+order1;
 Expected Output:
+Order {pizzas: Array(0), total: 0}
+pizzas: []
+total: 0
+[[Prototype]]: Object
+
+
+
 
 Test:
 Code:
