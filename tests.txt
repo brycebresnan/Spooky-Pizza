@@ -79,3 +79,12 @@ order1.addToOrder(pizza1);
 order1.addToOrder(pizza1);
 order1.total;
 Expected Output: 360
+
+
+Describe: Order.prototype.generatePizzaId()
+Before Each: const order1 = new Order();
+
+Test: "It should access the current order.pizzaId, incriment it by one, and return the new ID"
+Code:
+order1.generatePizzaId();
+Expected Output: 1
