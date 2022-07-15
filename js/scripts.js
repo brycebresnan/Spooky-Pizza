@@ -92,20 +92,15 @@ function createPizzaOrder(e) {
 }
 
 function displayOrder(order) {
-  // let orderDiv = document.querySelector("div#orders");
-  // orderDiv.innerText =  null;
-  
-  // const ul = document.createElement("ul");
-
-  // Object.keys(newOrder).forEach(function(key) {
-  //   const pizza = 
-
-  //   const li = document.createElement("li");
-  //   li.append(contact.fullName());
-  //   li.setAttribute("id", contact.id);
-  //   ul.append(li);
-  // });
-  // contactsDiv.append(ul);
-
+  let orderDiv = document.getElementById("orders");
+  orderDiv.innerText =  null;
+  const ul = document.createElement("ul");
+  Object.keys(newOrder.pizzas).forEach(function(key) {
+    const pizza = newOrder.pizzas[key]
+    const li = document.createElement("li");
+    li.append("1 " + pizza.size + " pizza with " + pizza.toppings.join(", "));
+    ul.append(li);
+  });
+  orderDiv.append(ul);
 }
 
