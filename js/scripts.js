@@ -4,7 +4,7 @@ this.pizzas = {};
 this.total = 0;
 }
 
-Order.prototype.addToOrder(pizza){
+Order.prototype.addToOrder = function(pizza) {
   //adds pizza object order to pizza property
   //adds cost to total
 }
@@ -17,8 +17,32 @@ function Pizza(toppings, size){
 }
 
 //loops over toppings
-Pizza.prototype.findCost(){
-  
+Pizza.prototype.findCost = function() {
+  this.cost = 0;
+  switch (this.size) {
+    case ("small"):
+      this.cost += 100;
+      break;
+    case ("med"):
+      this.cost += 200;
+      break;
+    case ("large"):
+      this.cost += 300;
+      break;
+  }
+
+  // this.cost += (this.toppings.length * 5)
+
+  this.toppings.forEach(topping => {
+    if (topping !== "Beyond Blood (vegan)"){
+      this.cost += 5;
+    }
+    else {
+      this.cost += 10;
+    }
+  })
+
+  return this.cost;
 }
 
 
