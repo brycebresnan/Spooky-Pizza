@@ -35,13 +35,14 @@ const order1 = new Order();
 typeof(order1);
 Expected Output: 'object'
  
-Test: "The object should have properties for pizzas (an array of objects), and total (default set to 0)"
+Test: "The object should have properties for pizzas (an empty object), pizza ID (default at 0), and total (default set to 0)"
 Code:
 const order1 = new Order();
 order1;
 Expected Output:
-Order {pizzas: Array(0), total: 0}
-pizzas: []
+Order {pizzas: {…}, pizzaId: 0, total: 0}
+pizzaId: 0
+pizzas: {}
 total: 0
 [[Prototype]]: Object
  
@@ -51,15 +52,11 @@ Before Each:
 const order1 = new Order();
 const pizza1 = new Pizza(["onions", "cheese", "Beyond Blood (vegan)"], "small");
  
-Test: "It should take in a pizza object as an argument and push it to the Order.pizzas array property."
+Test: "It should take in a pizza object as an argument and add it to the order.pizzas property object."
 Code:
 order1.addToOrder(pizza1);
 order1.pizzas;
-Expected Output:
-[Pizza]
-0: Pizza {toppings: Array(3), size: 'small', cost: 0}
-length: 1
-[[Prototype]]: Array(0)
+Expected Output: {1: Pizza}
  
 Test: "It should be able to add multiple pizzas to one order"
 Code:
@@ -67,14 +64,8 @@ order1.addToOrder(pizza1);
 order1.addToOrder(pizza1);
 order1.addToOrder(pizza1);
 order1.pizzas;
-Expected Output:
-(3) [Pizza, Pizza, Pizza]
-0: Pizza {toppings: Array(3), size: 'small', cost: 0}
-1: Pizza {toppings: Array(3), size: 'small', cost: 0}
-2: Pizza {toppings: Array(3), size: 'small', cost: 0}
-length: 3
-[[Prototype]]: Array(0)
- 
+Expected Output: {1: Pizza, 2: Pizza, 3: Pizza}
+
 Test: "It should add the cost of each pizza to the total property."
 Code:
 order1.addToOrder(pizza1);
@@ -86,5 +77,5 @@ Code:
 order1.addToOrder(pizza1);
 order1.addToOrder(pizza1);
 order1.addToOrder(pizza1);
-order1.pizzas;
+order1.total;
 Expected Output: 360

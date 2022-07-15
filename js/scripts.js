@@ -1,21 +1,28 @@
 //Utility Logic
 const newOrder = new Order();
 
-
 function stopMidi() {
   document.getElementById("midiPlayer").stop();
 }
 
 //Business Logic for Order Object
 function Order(){
-this.pizzas = [];
+this.pizzas = {}
+this.pizzaId = 0;
 this.total = 0;
 }
 
 Order.prototype.addToOrder = function(pizza) {
-  this.pizzas.push(pizza);
+  pizza.id = this.generatePizzaId();
+  this.pizzas[pizza.id] = pizza;
+  
   pizza.findCost(pizza);
   this.total += pizza.cost;
+}
+
+Order.prototype.generatePizzaId = function() {
+  this.pizzaId += 1
+  return this.pizzaId;
 }
 
 //Business Logic for Pizza Object
@@ -82,11 +89,23 @@ function createPizzaOrder(e) {
   displayOrder(newOrder);
 
   document.getElementById('orderForm').reset(); //resets form after submit
-  
 }
 
 function displayOrder(order) {
+  // let orderDiv = document.querySelector("div#orders");
+  // orderDiv.innerText =  null;
+  
+  // const ul = document.createElement("ul");
 
+  // Object.keys(newOrder).forEach(function(key) {
+  //   const pizza = 
+
+  //   const li = document.createElement("li");
+  //   li.append(contact.fullName());
+  //   li.setAttribute("id", contact.id);
+  //   ul.append(li);
+  // });
+  // contactsDiv.append(ul);
 
 }
 
