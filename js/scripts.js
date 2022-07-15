@@ -1,3 +1,6 @@
+//Utility Logic
+const newOrder = new Order();
+
 //Business Logic for Order Object
 function Order(){
 this.pizzas = [];
@@ -44,30 +47,38 @@ Pizza.prototype.findCost = function() {
 }
 
 //UI Logic:
+window.addEventListener("load", function(){
+  const pizzaForm = document.getElementById('orderForm');
+  pizzaForm.addEventListener("submit", createPizzaOrder);
+});
 
-function gatherFormValues(e) {
-  e.preventDefault();
-  
+function formPizzaToppings() {
   toppingArray = [];
   const tops = document.querySelectorAll("input[name='toppings']:checked");
   tops.forEach(topping => {
     toppingArray.push(topping.value);
   });
+  return toppingArray;
+}
 
+function formPizzaSize() {
   const size = document.querySelector("input[name='size']:checked").value;
+  return size;
+}
+
+function createPizzaOrder(e) {
+  e.preventDefault();
+
+  let newPizza = new Pizza(formPizzaToppings(), formPizzaSize());
+  newOrder.addToOrder(newPizza);
   
-  const pizzaForm = document.getElementById('orderForm');
-  pizzaForm.reset();
+  displayOrder(newOrder);
 
-  let pizza = new Pizza(toppingArray, size);
-  return pizza;
+  document.getElementById('orderForm').reset(); //resets form after submit
+  
 }
 
-function displayOrder(){
-
+function displayOrder(order){
+  
 }
 
-window.addEventListener("load", function(){
-  const pizzaForm = document.getElementById('orderForm');
-  pizzaForm.addEventListener("submit", gatherFormValues);
-});
