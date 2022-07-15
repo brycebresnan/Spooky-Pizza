@@ -1,40 +1,40 @@
 Describe: Pizza()
-
+ 
 Test: "The function should create a new Pizza type object."
 Code: 
 const pizza1 = new Pizza();
 typeof(pizz1);
 Expected Output: 'object'
-
-Test: "The function should take in an array of toppings, and a size varriable to set as two respective properties in the object, as well as initialize a third property, cost, and set it to 0."
+ 
+Test: "The function should take in an array of toppings, and a size variable to set as two respective properties in the object, as well as initialize a third property, cost, and set it to 0."
 Code:
 const pizza1 = new Pizza(["onions", "cheese"], "small");
 Expected Output: Pizza {cost: 0, toppings: ["onions", "cheese"], size: "small"}
-
-
+ 
+ 
 Describe: Pizza.prototype.findCost()
-
+ 
 Test: "If there are no toppings in the toppings object property, it should return just the cost of the pizza based on its size."
 Code: 
 const pizza1 = new Pizza([], "small");
 pizza1.findCost();
 Expected Output: 100
-
+ 
 Test: "If there are toppings, their cost will be added to the cost of the size of the pizza and return the total cost."
 Code:
 const pizza1 = new Pizza(["onions", "cheese", "Beyond Blood (vegan)"], "small");
 pizza1.findCost();
 Expected Output:120
-
-
+ 
+ 
 Describe: Order()
-
+ 
 Test: "The function should create a new Order type object."
 Code:
 const order1 = new Order();
 typeof(order1);
 Expected Output: 'object'
-
+ 
 Test: "The object should have properties for pizzas (an array of objects), and total (default set to 0)"
 Code:
 const order1 = new Order();
@@ -44,13 +44,13 @@ Order {pizzas: Array(0), total: 0}
 pizzas: []
 total: 0
 [[Prototype]]: Object
-
-
+ 
+ 
 Describe: Order.prototype.addToOrder()
 Before Each: 
 const order1 = new Order();
 const pizza1 = new Pizza(["onions", "cheese", "Beyond Blood (vegan)"], "small");
-
+ 
 Test: "It should take in a pizza object as an argument and push it to the Order.pizzas array property."
 Code:
 order1.addToOrder(pizza1);
@@ -60,7 +60,7 @@ Expected Output:
 0: Pizza {toppings: Array(3), size: 'small', cost: 0}
 length: 1
 [[Prototype]]: Array(0)
-
+ 
 Test: "It should be able to add multiple pizzas to one order"
 Code:
 order1.addToOrder(pizza1);
@@ -74,13 +74,13 @@ Expected Output:
 2: Pizza {toppings: Array(3), size: 'small', cost: 0}
 length: 3
 [[Prototype]]: Array(0)
-
+ 
 Test: "It should add the cost of each pizza to the total property."
 Code:
 order1.addToOrder(pizza1);
 order1.total;
 Expected Output: 120
-
+ 
 Test: "It should add multiple pizza costs together"
 Code:
 order1.addToOrder(pizza1);
@@ -88,68 +88,3 @@ order1.addToOrder(pizza1);
 order1.addToOrder(pizza1);
 order1.pizzas;
 Expected Output: 360
-
-Test:
-Code:
-Expected Output:
-
-Test:
-Code:
-Expected Output:
-
-Test:
-Code:
-Expected Output:
-
-Test:
-Code:
-Expected Output:
-
-Test:
-Code:
-Expected Output:
-
-Test:
-Code:
-Expected Output:
-
-Test:
-Code:
-Expected Output:
-
-Test:
-Code:
-Expected Output:
-
-Test:
-Code:
-Expected Output:
-
-Test:
-Code:
-Expected Output:
-
-Test:
-Code:
-Expected Output:
-
-Test:
-Code:
-Expected Output:
-
-Test:
-Code:
-Expected Output:
-
-Test:
-Code:
-Expected Output:
-
-Test:
-Code:
-Expected Output:
-
-Test:
-Code:
-Expected Output:
-
