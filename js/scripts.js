@@ -1,6 +1,11 @@
 //Utility Logic
 const newOrder = new Order();
 
+
+function stopMidi() {
+  document.getElementById("midiPlayer").stop();
+}
+
 //Business Logic for Order Object
 function Order(){
 this.pizzas = [];
@@ -50,6 +55,8 @@ Pizza.prototype.findCost = function() {
 window.addEventListener("load", function(){
   const pizzaForm = document.getElementById('orderForm');
   pizzaForm.addEventListener("submit", createPizzaOrder);
+  const stop = document.getElementById('stopButton');
+  stop.addEventListener("click", stopMidi);
 });
 
 function formPizzaToppings() {
@@ -68,7 +75,7 @@ function formPizzaSize() {
 
 function createPizzaOrder(e) {
   e.preventDefault();
-
+  document.getElementById("midiPlayer").start();
   let newPizza = new Pizza(formPizzaToppings(), formPizzaSize());
   newOrder.addToOrder(newPizza);
   
@@ -78,7 +85,8 @@ function createPizzaOrder(e) {
   
 }
 
-function displayOrder(order){
-  
+function displayOrder(order) {
+
+
 }
 
