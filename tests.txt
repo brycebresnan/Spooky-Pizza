@@ -1,0 +1,111 @@
+Describe: Pizza()
+
+Test: "The function should create a new Pizza type object."
+Code: 
+const pizza1 = new Pizza();
+Expected Output:Pizza {}
+
+Test: "The function should take in an array of toppings, and a size varriable to set as two respective properties in the object, as well as initialize a third property, cost, and set it to 0."
+Code:
+const pizza1 = new Pizza(["onions", "cheese"], "small");
+Expected Output: Pizza {cost: 0, toppings: ["onions", "cheese"], size: "small"}
+
+
+Describe: findCost()
+
+Test:
+Code:
+Expected Output:
+
+Test:
+Code:
+Expected Output:
+
+Test:
+Code:
+Expected Output:
+
+Test:
+Code:
+Expected Output:
+
+Test:
+Code:
+Expected Output:
+
+Test:
+Code:
+Expected Output:
+
+Test:
+Code:
+Expected Output:
+
+Test:
+Code:
+Expected Output:
+
+Test:
+Code:
+Expected Output:
+
+Test:
+Code:
+Expected Output:
+
+Test:
+Code:
+Expected Output:
+
+Test:
+Code:
+Expected Output:
+
+Test:
+Code:
+Expected Output:
+
+Test:
+Code:
+Expected Output:
+
+Test:
+Code:
+Expected Output:
+
+Test:
+Code:
+Expected Output:
+
+Test:
+Code:
+Expected Output:
+
+Test:
+Code:
+Expected Output:
+
+Test:
+Code:
+Expected Output:
+
+Test:
+Code:
+Expected Output:
+
+Test:
+Code:
+Expected Output:
+
+Test:
+Code:
+Expected Output:
+
+Test:
+Code:
+Expected Output:
+
+Test:
+Code:
+Expected Output:
+
