@@ -53,8 +53,7 @@ Pizza.prototype.findCost = function() {
     else {
       this.cost += 10;
     }
-  })
-
+  });
   return this.cost;
 }
 
@@ -83,9 +82,9 @@ function formPizzaSize() {
 function createPizzaOrder(e) {
   e.preventDefault();
   document.getElementById("midiPlayer").start();
+  
   let newPizza = new Pizza(formPizzaToppings(), formPizzaSize());
   newOrder.addToOrder(newPizza);
-  
   displayOrder(newOrder);
 
   document.getElementById('orderForm').reset(); //resets form after submit
@@ -98,7 +97,12 @@ function displayOrder(order) {
   Object.keys(order.pizzas).forEach(function(key) {
     const pizza = order.pizzas[key]
     const li = document.createElement("li");
-    li.append("1 " + pizza.size + " pizza with " + pizza.toppings.join(", "));
+    if (pizza.toppings.length > 0) {
+      li.append("1 " + pizza.size + " pizza with " + pizza.toppings.join(", "));
+    }
+    else {
+      li.append("1 " + pizza.size + " cheese pizza");
+    } 
     ul.append(li);
   });
   orderDiv.append(ul);
