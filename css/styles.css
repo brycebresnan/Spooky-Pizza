@@ -10,11 +10,6 @@ body {
   padding-left:30px;
 }
 
-@font-face {
-  font-family: 'Comic Sans MS';
-  src: url("comic-sans-ms/comici.ttf");
-}
-
 body #floatl {
   float:left;
   padding:2%;
