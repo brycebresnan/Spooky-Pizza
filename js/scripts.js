@@ -95,12 +95,13 @@ function displayOrder(order) {
   let orderDiv = document.getElementById("orders");
   orderDiv.innerText =  null;
   const ul = document.createElement("ul");
-  Object.keys(newOrder.pizzas).forEach(function(key) {
-    const pizza = newOrder.pizzas[key]
+  Object.keys(order.pizzas).forEach(function(key) {
+    const pizza = order.pizzas[key]
     const li = document.createElement("li");
     li.append("1 " + pizza.size + " pizza with " + pizza.toppings.join(", "));
     ul.append(li);
   });
   orderDiv.append(ul);
+  document.getElementById("totalCost").innerText = " " + order.total + " Gold";
 }
 
