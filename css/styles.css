@@ -1,5 +1,5 @@
 body {
-  font-family: "Dosis", Arial, Helvetica, sans-serif;
+  font-family: "Comic Sans MS", "Comic Sans", cursive;
   font-size: 20px;
   line-height: 1.4;
   background-repeat: repeat-y;
@@ -8,6 +8,38 @@ body {
   font-weight: 300;
   background-image: url(../img/dungeon.gif);
   padding-left:30px;
+}
+
+body #floatl {
+  float:left;
+  padding:2%;
+}
+
+body #floatr {
+  float:right;
+  padding:2%;
+}
+
+body p {
+  text-align: center;
+}
+
+body img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: auto;
+}
+
+button {
+  background-color: #383838; /* Green */
+  border: 10px;
+  color: rgb(255, 0, 0);
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 20px;
 }
 
 h1 {
@@ -20,4 +52,18 @@ h1 {
 
 midi-player {
   display: none;
+}
+
+.container {
+  display:block; 
+  margin-left: auto;
+  margin-right: auto;
+  width: 80%;
+}
+
+.container #ilovepizzagif {
+  display:block; 
+  margin-left: auto;
+  margin-right: auto;
+  width: auto;
 }

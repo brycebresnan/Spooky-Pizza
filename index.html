@@ -11,8 +11,12 @@
 
   <body>
     <div class="container">
+      <img src="img/iluvpizza.gif" id="ilovepizzagif">
       <h1>Welcome to Spooky's Pizza!</h1>
+      <img src="img/flame2.gif" id="floatl">
+      <img src="img/flame2.gif" id="floatr">
       <p>All our pizzas are made from the least fresh ingredients possible and burned alive to imperfection in our wood fired crematorium. Please use the order form below to create your most decrepit Frankensteinian pizza!</p>
+      <img src="img/bloodbar.gif">
       <form id="orderForm">
         <h4>Size:</h4>
         <input type="radio" id="small" name="size" value="small" checked>
@@ -45,12 +49,15 @@
         <label for="top1">Beyond Blood (vegan) +10 Gold</label>
         <br><br>
         <button type="submit">Send to the Crypt!</button>
+        <br><br>
       </form>
-      <div id="cart">
+      <img src="img/bloodbar.gif">
+      <div id="showOrders">
         <h4>Your Order:</h4>
-        <div id="results"></div>
+        <div id="orders"></div>
       </div>
       <midi-player id="midiPlayer" src="midi/funeral.mid"></midi-player>
+      <img src="img/Italy_pizza.gif">
       <button id="stopButton">Stop The Music</button>
     </div>
   </body>
