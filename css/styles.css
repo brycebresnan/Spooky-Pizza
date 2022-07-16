@@ -1,5 +1,5 @@
 body {
-  font-family: "Comic Sans MS", "Comic Sans", cursive;
+  font-family: "Comic Sans MS", "Comic Sans", "Times New Roman", cursive;
   font-size: 20px;
   line-height: 1.4;
   background-repeat: repeat-y;
@@ -8,6 +8,11 @@ body {
   font-weight: 300;
   background-image: url(../img/dungeon.gif);
   padding-left:30px;
+}
+
+@font-face {
+  font-family: 'Comic Sans MS';
+  src: url("comic-sans-ms/comici.ttf");
 }
 
 body #floatl {
