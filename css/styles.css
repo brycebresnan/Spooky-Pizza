@@ -20,8 +20,9 @@ body #floatr {
   padding:2%;
 }
 
-body p {
+body #info {
   text-align: center;
+  padding-bottom: 5%;
 }
 
 body img {
@@ -32,7 +33,7 @@ body img {
 }
 
 button {
-  background-color: #383838; /* Green */
+  background-color: #383838;
   border: 10px;
   color: rgb(255, 0, 0);
   padding: 15px 32px;
